@@ -30,6 +30,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-
+    // MARK: - 切换根控制器
+    
+    /**
+    切换根控制器
+    - parameter isMain: true: 表示切换到MainViewController, false: welcome
+    */
+//    func switchRootController(isMain: Bool) {
+//        window?.rootViewController = isMain ? CZMainViewController() : CZWelcomeViewController()
+//    }
+    
+    private func setupAppearance() {
+        // 尽早设置
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+    }
 }
 

@@ -66,8 +66,9 @@ extension CZBaseTableViewController:CZVistorViewDelegate{
     }
     func vistorViewLoginClick() {
        //加载授权界面
-//        let controller = CZOauthViewController
-//        presentViewController(UINavigationController(rootViewController: controller), animated: true, completion: nil)
+      let controller = CZOauthViewController()
+        
+    presentViewController(UINavigationController(rootViewController: controller), animated: true, completion: nil)
     }
     
     

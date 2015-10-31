@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120D78DD1BE3A0B4007ADA9D /* CZNetwoorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */; settings = {ASSET_TAGS = (); }; };
 		127661B81BE0761E00F8A855 /* CZMainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127661B71BE0761E00F8A855 /* CZMainTabBar.swift */; settings = {ASSET_TAGS = (); }; };
 		127661BC1BE0BFB700F8A855 /* CZBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127661BB1BE0BFB700F8A855 /* CZBaseTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		127661BE1BE0C3C000F8A855 /* CZVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127661BD1BE0C3C000F8A855 /* CZVistorView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -19,6 +20,7 @@
 		12A838C91BDF9FFB00CDA49A /* CZMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A838C81BDF9FFB00CDA49A /* CZMessageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		12A838CB1BDFA01E00CDA49A /* CZProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A838CA1BDFA01E00CDA49A /* CZProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		12A838CD1BDFA2A600CDA49A /* CZHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A838CC1BDFA2A600CDA49A /* CZHomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		12A9D2261BE3F06100D7107F /* CZUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9D2251BE3F06100D7107F /* CZUserAccount.swift */; settings = {ASSET_TAGS = (); }; };
 		12C826651BE33FDF00230505 /* CZOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C826641BE33FDF00230505 /* CZOauthViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B2572228DF521FF681F73C77 /* Pods_weibo_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25225BF1E73FF13AA6588C8 /* Pods_weibo_1.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZNetwoorkTools.swift; sourceTree = "<group>"; };
 		127661B71BE0761E00F8A855 /* CZMainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMainTabBar.swift; sourceTree = "<group>"; };
 		127661BB1BE0BFB700F8A855 /* CZBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZBaseTableViewController.swift; sourceTree = "<group>"; };
 		127661BD1BE0C3C000F8A855 /* CZVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZVistorView.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		12A838C81BDF9FFB00CDA49A /* CZMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMessageViewController.swift; sourceTree = "<group>"; };
 		12A838CA1BDFA01E00CDA49A /* CZProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZProfileViewController.swift; sourceTree = "<group>"; };
 		12A838CC1BDFA2A600CDA49A /* CZHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZHomeViewController.swift; sourceTree = "<group>"; };
+		12A9D2251BE3F06100D7107F /* CZUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZUserAccount.swift; sourceTree = "<group>"; };
 		12C826641BE33FDF00230505 /* CZOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZOauthViewController.swift; sourceTree = "<group>"; };
 		3A7B0A3A5A44D39D83D9C825 /* Pods-weibo 1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo 1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weibo 1/Pods-weibo 1.debug.xcconfig"; sourceTree = "<group>"; };
 		46E923A0E7A9CBBF0E3ABBF6 /* Pods-weibo 1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo 1.release.xcconfig"; path = "Pods/Target Support Files/Pods-weibo 1/Pods-weibo 1.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 		12A838AD1BDF99A600CDA49A /* Model(全局模型) */ = {
 			isa = PBXGroup;
 			children = (
+				12A9D2251BE3F06100D7107F /* CZUserAccount.swift */,
 			);
 			path = "Model(全局模型)";
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				12A838C01BDF99A600CDA49A /* Controller */,
 				12A838C11BDF99A600CDA49A /* Model */,
 				12A838C21BDF99A600CDA49A /* View */,
+				120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */,
 			);
 			path = "Profile(我)";
 			sourceTree = "<group>";
@@ -575,6 +581,7 @@
 			files = (
 				12A838CB1BDFA01E00CDA49A /* CZProfileViewController.swift in Sources */,
 				127661BC1BE0BFB700F8A855 /* CZBaseTableViewController.swift in Sources */,
+				120D78DD1BE3A0B4007ADA9D /* CZNetwoorkTools.swift in Sources */,
 				12A838C71BDF9F9B00CDA49A /* CZDiscoverController.swift in Sources */,
 				12A838CD1BDFA2A600CDA49A /* CZHomeViewController.swift in Sources */,
 				12A838C91BDF9FFB00CDA49A /* CZMessageViewController.swift in Sources */,
@@ -583,6 +590,7 @@
 				12C826651BE33FDF00230505 /* CZOauthViewController.swift in Sources */,
 				12A8387D1BDF98D600CDA49A /* AppDelegate.swift in Sources */,
 				127661BE1BE0C3C000F8A855 /* CZVistorView.swift in Sources */,
+				12A9D2261BE3F06100D7107F /* CZUserAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
