@@ -43,7 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZNetwoorkTools.swift; sourceTree = "<group>"; };
+		120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CZNetwoorkTools.swift; path = "../Module(模块)/Profile(我)/CZNetwoorkTools.swift"; sourceTree = "<group>"; };
 		127661B71BE0761E00F8A855 /* CZMainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMainTabBar.swift; sourceTree = "<group>"; };
 		127661BB1BE0BFB700F8A855 /* CZBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZBaseTableViewController.swift; sourceTree = "<group>"; };
 		127661BD1BE0C3C000F8A855 /* CZVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZVistorView.swift; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 		12A838B71BDF99A600CDA49A /* Main(主要的) */ = {
 			isa = PBXGroup;
 			children = (
-				12C826621BE33F8100230505 /* Oauth */,
+				12C826621BE33F8100230505 /* Oauth（授权） */,
 				12A838B81BDF99A600CDA49A /* Controller */,
 				12A838B91BDF99A600CDA49A /* Model */,
 				12A838BA1BDF99A600CDA49A /* View */,
@@ -330,7 +330,6 @@
 				12A838C01BDF99A600CDA49A /* Controller */,
 				12A838C11BDF99A600CDA49A /* Model */,
 				12A838C21BDF99A600CDA49A /* View */,
-				120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */,
 			);
 			path = "Profile(我)";
 			sourceTree = "<group>";
@@ -360,15 +359,17 @@
 		12A838C31BDF99A600CDA49A /* Tool(工具类) */ = {
 			isa = PBXGroup;
 			children = (
+				120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */,
 			);
 			path = "Tool(工具类)";
 			sourceTree = "<group>";
 		};
-		12C826621BE33F8100230505 /* Oauth */ = {
+		12C826621BE33F8100230505 /* Oauth（授权） */ = {
 			isa = PBXGroup;
 			children = (
 				12C826631BE33F8100230505 /* controller */,
 			);
+			name = "Oauth（授权）";
 			path = Oauth;
 			sourceTree = "<group>";
 		};

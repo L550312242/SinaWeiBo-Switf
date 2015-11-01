@@ -79,18 +79,36 @@ extension CZOauthViewController: UIWebViewDelegate{
     func loadAccessToken(code: String){
         CZNetwoorkTools.shareInstance.loadAccessToken(code){(result, error) -> () in
             if error != nil || result == nil{
-                SVProgressHUD.showErrorWithStatus("网络不给力",maskType:SVProgressHUDMaskType.Black)
-                // 延迟关闭. dispatch_after 没有提示,可以拖oc的dispatch_after来修改
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
-                    self.close()
-                })
+             //   self.
+//                SVProgressHUD.showErrorWithStatus("网络不给力",maskType:SVProgressHUDMaskType.Black)
+//                // 延迟关闭. dispatch_after 没有提示,可以拖oc的dispatch_after来修改
+//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
+//                    self.close()
+//                })
+                self.netError("网络不给力")
                 return
             }
             let account = CZUserAccount(dict: result!)
             //保存到沙盒
             account.saveAccount()
-            
-            SVProgressHUD.dismiss()
+            //加载用户数据
+            account.loadUserInfo({ (error) ->() in if error != nil{
+                self.netError("加载用户数据出错...")
+                return
+                }
+                print("account:\(CZUserAccount.loadAccount())")
+                self.close()
+            })
+        //    SVProgressHUD.dismiss()
         }
     }
+
+private func netError(message:String){
+    SVProgressHUD.showErrorWithStatus("网络不给力",maskType:SVProgressHUDMaskType.Black)
+    
+    // 延迟关闭. dispatch_after 没有提示,可以拖oc的dispatch_after来修改
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
+        self.close()
+    })
+  }
 }

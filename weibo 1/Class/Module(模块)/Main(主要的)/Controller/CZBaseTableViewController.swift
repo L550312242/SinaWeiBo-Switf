@@ -28,7 +28,7 @@ class CZBaseTableViewController: UITableViewController {
         
         //设置导航栏
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "vistorViewRegistClick")
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登陆", style: UIBarButtonItemStyle.Plain, target: self, action: "vistorViewRegistClick")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登陆", style: UIBarButtonItemStyle.Plain, target: self, action: "vistorViewLoginClick")
 
         if self is CZHomeViewController{
             vistorView.startRotationAnimation()

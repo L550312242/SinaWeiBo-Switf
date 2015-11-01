@@ -206,6 +206,7 @@ class CZVistorView: UIView {
         //设置背景
         button.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Normal)
         button.sizeToFit()
+        button.addTarget(self, action: "redistClick", forControlEvents:UIControlEvents.TouchUpInside )
         return button
     }()
     //登陆按钮
@@ -218,6 +219,9 @@ class CZVistorView: UIView {
         //设置背景
         button.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Normal)
         button.sizeToFit()
+        
+        
+        button.addTarget(self, action: "loginClick", forControlEvents: UIControlEvents.TouchUpInside)
         return button
         }()
     //遮盖
