@@ -120,11 +120,11 @@ class CZNewFeatureViewController: UICollectionViewController {
             contentView.addConstraint(NSLayoutConstraint(item: startButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -160))
           
         }
-        //点击事件
+      //  点击事件
        
-//            func startButtonClick() {
-//                (UIApplication.sharedApplication().delegate as! AppDelegate).switchRootController(true)
-//            }
+            func startButtonClick() {
+                (UIApplication.sharedApplication().delegate as! AppDelegate).switchRootController(true)
+            }
 //         func startButtonClick(){
 //            (UIApplication.sharedApplication().delegate as! AppDelegate).switchRootController(true)
 //        }

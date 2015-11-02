@@ -11,8 +11,7 @@ class CZBaseTableViewController: UITableViewController {
         2.super.loadView() 创建TableView
         
         */
-        let userLogin = false
-    
+        let userLogin = CZUserAccount.userLogin()
     override func loadView() {
         userLogin ? super.loadView() : setupVisitorView()
     }

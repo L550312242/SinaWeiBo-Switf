@@ -13,7 +13,9 @@ class CZHomeViewController: CZBaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if != CZUserAccount.userLogin(){
+            return
+        }
         setupNavgaiotnBar()
     }
     //设置导航栏
@@ -31,6 +33,17 @@ class CZHomeViewController: CZBaseTableViewController {
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName:"navigationbar_friendsearch")
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName:"navigationbar_pop")
+        //获取用户名
+        //??: 如果？？前面有值，拆包 赋值给 name，如果没有值将 ？？后面的值赋值给 name
+        let name = CZUserAccount.loadAccount()?.name ?? "没有名称"
+        //设置title
+        let button = UIButton()
+        button.setTitle(name, forState: UIControlState.Normal)
+        button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        button.sizeToFit()
+        button.addTarget(self, action: "homeButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        navigationItem.titleView = button
+        
     }
 
 //    //生成一个带按钮的UIBarButtonItem

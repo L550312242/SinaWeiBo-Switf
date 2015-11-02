@@ -22,15 +22,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabbar = CZMainViewController()
         //?: 如果？前面的变量有值才执行后面的代码
-        window?.rootViewController = CZNewFeatureViewController()
+        window?.rootViewController = defaultController()
         
         //成为主窗口并显示
         window?.makeKeyAndVisible()
         
         return true
     }
+    private func defaultController() -> UIViewController {
+        //判断是否登录
+         // 每次判断都需要 == nil
+        if !CZUserAccount.userLogin() {
+            return CZMainViewController()
+        }
+        //  判断是否是新版本
+      return  isNewVersion() ? CZNewFeatureViewController() : CZWelcomeViewController()
+    }
     //判断是否是新版本
-    private func inNewVersion() -> Bool{
+    private func isNewVersion() -> Bool{
         //获取当前版本号
     let versionString = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
         let currentVersion = Double(versionString)!
@@ -50,9 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     切换根控制器
     - parameter isMain: true: 表示切换到MainViewController, false: welcome
     */
-//    func switchRootController(isMain: Bool) {
-//        window?.rootViewController = isMain ? CZMainViewController() : CZWelcomeViewController()
-//    }
+    func switchRootController(isMain: Bool) {
+        window?.rootViewController = isMain ? CZMainViewController() : CZWelcomeViewController()
+    }
     
     private func setupAppearance() {
         // 尽早设置

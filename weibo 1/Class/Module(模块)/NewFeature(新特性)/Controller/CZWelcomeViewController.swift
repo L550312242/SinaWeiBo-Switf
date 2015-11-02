@@ -1,5 +1,6 @@
 
 import UIKit
+import SDWebImage
 
 class CZWelcomeViewController: UIViewController {
     ///MARK: -- 属性 --
@@ -9,6 +10,12 @@ class CZWelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         perpareUI()
+        
+        //设置用户头像
+       if let urlString = CZUserAccount.loadAccount()?.avater_large {
+        
+        iconView.sd_setImageWithURL(NSURL (string: urlString), placeholderImage: UIImage(named: "tumblr_l7ja4mKGAg1qcb9pro1_400 (1)"))
+        }
 
     }
     override func viewDidAppear(animated: Bool) {
@@ -22,6 +29,7 @@ class CZWelcomeViewController: UIViewController {
             UIView.animateWithDuration(1, animations: { () -> Void in
                 self.welcomeLabel.alpha = 1
             }, completion: { (_) -> Void in
+                (UIApplication.sharedApplication().delegate as! AppDelegate).switchRootController(true)
                 })
         }
     }
@@ -45,7 +53,9 @@ class CZWelcomeViewController: UIViewController {
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[bkg]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bkg" : backgrundImageView]))
         //头像
        view.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 85))
         
+        view.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 85))
         
         //垂直 底部160
         iconViewBottomCons =  NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 160)

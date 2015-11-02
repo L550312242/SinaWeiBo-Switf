@@ -11,6 +11,12 @@ iOS保存数据的方式:
 
 //NSCoding  要实现归档，先添加NSCoding协议
 class CZUserAccount: NSObject, NSCoding{
+    
+    // 当做类方法. 返回值就是属性的类型
+    // 有账号返回true
+    class func userLogin() -> Bool {
+        return CZUserAccount.loadAccount() != nil
+    }
     //用于调用access_token, 接口获取授权的Access token
     var access_token: String?
     //access_token的生命周期，单位是秒数

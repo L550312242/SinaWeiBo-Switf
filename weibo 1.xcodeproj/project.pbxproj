@@ -15,6 +15,7 @@
 		127661BC1BE0BFB700F8A855 /* CZBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127661BB1BE0BFB700F8A855 /* CZBaseTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		127661BE1BE0C3C000F8A855 /* CZVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127661BD1BE0C3C000F8A855 /* CZVistorView.swift */; settings = {ASSET_TAGS = (); }; };
 		129D1FFD1BE7381D00832E59 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D1FFC1BE7381D00832E59 /* UIBarButtonItem+Extension.swift */; settings = {ASSET_TAGS = (); }; };
+		129D20011BE7867300832E59 /* CZHomeTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D20001BE7867300832E59 /* CZHomeTitleButton.swift */; settings = {ASSET_TAGS = (); }; };
 		12A8387D1BDF98D600CDA49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A8387C1BDF98D600CDA49A /* AppDelegate.swift */; };
 		12A838841BDF98D600CDA49A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12A838831BDF98D600CDA49A /* Assets.xcassets */; };
 		12A838921BDF98D700CDA49A /* weibo_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A838911BDF98D700CDA49A /* weibo_1Tests.swift */; };
@@ -55,6 +56,7 @@
 		127661BB1BE0BFB700F8A855 /* CZBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZBaseTableViewController.swift; sourceTree = "<group>"; };
 		127661BD1BE0C3C000F8A855 /* CZVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZVistorView.swift; sourceTree = "<group>"; };
 		129D1FFC1BE7381D00832E59 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		129D20001BE7867300832E59 /* CZHomeTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZHomeTitleButton.swift; sourceTree = "<group>"; };
 		12A838791BDF98D600CDA49A /* weibo 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A8387C1BDF98D600CDA49A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12A838831BDF98D600CDA49A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,8 +110,7 @@
 			children = (
 				121D3E121BE62652002246E7 /* Controller */,
 			);
-			name = "NewFeature(新特性)";
-			path = "../NewFeature(新特性)";
+			path = "NewFeature(新特性)";
 			sourceTree = "<group>";
 		};
 		121D3E121BE62652002246E7 /* Controller */ = {
@@ -211,6 +212,8 @@
 		12A838AE1BDF99A600CDA49A /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				121D3E111BE62652002246E7 /* NewFeature(新特性) */,
+				12C826621BE33F8100230505 /* Oauth（授权） */,
 				12A838B71BDF99A600CDA49A /* Main(主要的) */,
 				12A838B31BDF99A600CDA49A /* Home(首页) */,
 				12A838AF1BDF99A600CDA49A /* Discover(发现) */,
@@ -280,6 +283,7 @@
 		12A838B61BDF99A600CDA49A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				129D20001BE7867300832E59 /* CZHomeTitleButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,8 +291,6 @@
 		12A838B71BDF99A600CDA49A /* Main(主要的) */ = {
 			isa = PBXGroup;
 			children = (
-				121D3E111BE62652002246E7 /* NewFeature(新特性) */,
-				12C826621BE33F8100230505 /* Oauth（授权） */,
 				12A838B81BDF99A600CDA49A /* Controller */,
 				12A838B91BDF99A600CDA49A /* Model */,
 				12A838BA1BDF99A600CDA49A /* View */,
@@ -399,7 +401,7 @@
 				12C826631BE33F8100230505 /* controller */,
 			);
 			name = "Oauth（授权）";
-			path = Oauth;
+			path = "Main(主要的)/Oauth";
 			sourceTree = "<group>";
 		};
 		12C826631BE33F8100230505 /* controller */ = {
@@ -611,6 +613,7 @@
 			files = (
 				12A838CB1BDFA01E00CDA49A /* CZProfileViewController.swift in Sources */,
 				121D3E141BE626BA002246E7 /* CZWelcomeViewController.swift in Sources */,
+				129D20011BE7867300832E59 /* CZHomeTitleButton.swift in Sources */,
 				127661BC1BE0BFB700F8A855 /* CZBaseTableViewController.swift in Sources */,
 				120D78DD1BE3A0B4007ADA9D /* CZNetwoorkTools.swift in Sources */,
 				12A838C71BDF9F9B00CDA49A /* CZDiscoverController.swift in Sources */,

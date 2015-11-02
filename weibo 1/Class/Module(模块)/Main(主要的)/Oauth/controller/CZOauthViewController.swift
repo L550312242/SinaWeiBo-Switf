@@ -15,10 +15,18 @@ class CZOauthViewController: UIViewController {
     //    view.backgroundColor = UIColor.brownColor()
         // 没有的背景颜色的时候modal出来的时候动画奇怪
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: "close")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "填充", style: UIBarButtonItemStyle.Plain, target: self, action: "autoFill")
         //加载网页
         let request = NSURLRequest(URL: CZNetwoorkTools.shareInstance.oauthRUL())
         webView.loadRequest(request)
 
+    }
+    /// 自动填充账号密码
+    func autoFill() {
+        let js = "document.getElementById('userId').value='550312242@qq.com';" + "document.getElementById('passwd').value='luoliguo741';"
+        
+        // webView执行js代码
+        webView.stringByEvaluatingJavaScriptFromString(js)
     }
     ///关闭控制器
     func close(){
@@ -65,7 +73,8 @@ extension CZOauthViewController: UIWebViewDelegate{
                 let nsQuery = query as NSString
                 //截取code的值
                 let code  = nsQuery.substringFromIndex(codeString.characters.count)
-                 print("code: \(code)")
+                 //获取assess token
+                loadAccessToken(code)
             }else{
                 //取消
             }
@@ -98,6 +107,7 @@ extension CZOauthViewController: UIWebViewDelegate{
                 }
                 print("account:\(CZUserAccount.loadAccount())")
                 self.close()
+                (UIApplication.sharedApplication().delegate as! AppDelegate).switchRootController(false)
             })
         //    SVProgressHUD.dismiss()
         }
