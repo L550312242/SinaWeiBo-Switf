@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		120D78DD1BE3A0B4007ADA9D /* CZNetwoorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */; settings = {ASSET_TAGS = (); }; };
+		121D3E141BE626BA002246E7 /* CZWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D3E131BE626BA002246E7 /* CZWelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		121D3E161BE63D03002246E7 /* CZNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D3E151BE63D03002246E7 /* CZNewFeatureViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		124E85B11BE6653B003F5D7A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E85B01BE6653B003F5D7A /* UIColor+Extension.swift */; settings = {ASSET_TAGS = (); }; };
 		127661B81BE0761E00F8A855 /* CZMainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127661B71BE0761E00F8A855 /* CZMainTabBar.swift */; settings = {ASSET_TAGS = (); }; };
 		127661BC1BE0BFB700F8A855 /* CZBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127661BB1BE0BFB700F8A855 /* CZBaseTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		127661BE1BE0C3C000F8A855 /* CZVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127661BD1BE0C3C000F8A855 /* CZVistorView.swift */; settings = {ASSET_TAGS = (); }; };
+		129D1FFD1BE7381D00832E59 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D1FFC1BE7381D00832E59 /* UIBarButtonItem+Extension.swift */; settings = {ASSET_TAGS = (); }; };
 		12A8387D1BDF98D600CDA49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A8387C1BDF98D600CDA49A /* AppDelegate.swift */; };
 		12A838841BDF98D600CDA49A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12A838831BDF98D600CDA49A /* Assets.xcassets */; };
 		12A838921BDF98D700CDA49A /* weibo_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A838911BDF98D700CDA49A /* weibo_1Tests.swift */; };
@@ -44,9 +48,13 @@
 
 /* Begin PBXFileReference section */
 		120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CZNetwoorkTools.swift; path = "../Module(模块)/Profile(我)/CZNetwoorkTools.swift"; sourceTree = "<group>"; };
+		121D3E131BE626BA002246E7 /* CZWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZWelcomeViewController.swift; sourceTree = "<group>"; };
+		121D3E151BE63D03002246E7 /* CZNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZNewFeatureViewController.swift; sourceTree = "<group>"; };
+		124E85B01BE6653B003F5D7A /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		127661B71BE0761E00F8A855 /* CZMainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMainTabBar.swift; sourceTree = "<group>"; };
 		127661BB1BE0BFB700F8A855 /* CZBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZBaseTableViewController.swift; sourceTree = "<group>"; };
 		127661BD1BE0C3C000F8A855 /* CZVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZVistorView.swift; sourceTree = "<group>"; };
+		129D1FFC1BE7381D00832E59 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		12A838791BDF98D600CDA49A /* weibo 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A8387C1BDF98D600CDA49A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12A838831BDF98D600CDA49A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +103,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		121D3E111BE62652002246E7 /* NewFeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+				121D3E121BE62652002246E7 /* Controller */,
+			);
+			name = "NewFeature(新特性)";
+			path = "../NewFeature(新特性)";
+			sourceTree = "<group>";
+		};
+		121D3E121BE62652002246E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				121D3E131BE626BA002246E7 /* CZWelcomeViewController.swift */,
+				121D3E151BE63D03002246E7 /* CZNewFeatureViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		12A838701BDF98D600CDA49A = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +187,8 @@
 		12A838AB1BDF99A600CDA49A /* Extension(扩展) */ = {
 			isa = PBXGroup;
 			children = (
+				124E85B01BE6653B003F5D7A /* UIColor+Extension.swift */,
+				129D1FFC1BE7381D00832E59 /* UIBarButtonItem+Extension.swift */,
 			);
 			path = "Extension(扩展)";
 			sourceTree = "<group>";
@@ -259,6 +287,7 @@
 		12A838B71BDF99A600CDA49A /* Main(主要的) */ = {
 			isa = PBXGroup;
 			children = (
+				121D3E111BE62652002246E7 /* NewFeature(新特性) */,
 				12C826621BE33F8100230505 /* Oauth（授权） */,
 				12A838B81BDF99A600CDA49A /* Controller */,
 				12A838B91BDF99A600CDA49A /* Model */,
@@ -581,6 +610,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12A838CB1BDFA01E00CDA49A /* CZProfileViewController.swift in Sources */,
+				121D3E141BE626BA002246E7 /* CZWelcomeViewController.swift in Sources */,
 				127661BC1BE0BFB700F8A855 /* CZBaseTableViewController.swift in Sources */,
 				120D78DD1BE3A0B4007ADA9D /* CZNetwoorkTools.swift in Sources */,
 				12A838C71BDF9F9B00CDA49A /* CZDiscoverController.swift in Sources */,
@@ -588,9 +618,12 @@
 				12A838C91BDF9FFB00CDA49A /* CZMessageViewController.swift in Sources */,
 				127661B81BE0761E00F8A855 /* CZMainTabBar.swift in Sources */,
 				12A838C51BDF9F6600CDA49A /* CZMainViewController.swift in Sources */,
+				124E85B11BE6653B003F5D7A /* UIColor+Extension.swift in Sources */,
 				12C826651BE33FDF00230505 /* CZOauthViewController.swift in Sources */,
+				121D3E161BE63D03002246E7 /* CZNewFeatureViewController.swift in Sources */,
 				12A8387D1BDF98D600CDA49A /* AppDelegate.swift in Sources */,
 				127661BE1BE0C3C000F8A855 /* CZVistorView.swift in Sources */,
+				129D1FFD1BE7381D00832E59 /* UIBarButtonItem+Extension.swift in Sources */,
 				12A9D2261BE3F06100D7107F /* CZUserAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
