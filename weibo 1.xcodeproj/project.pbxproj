@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		120D78DD1BE3A0B4007ADA9D /* CZNetwoorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */; settings = {ASSET_TAGS = (); }; };
+		120D78DD1BE3A0B4007ADA9D /* CZNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D78DC1BE3A0B4007ADA9D /* CZNetworkTools.swift */; settings = {ASSET_TAGS = (); }; };
 		121D3E141BE626BA002246E7 /* CZWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D3E131BE626BA002246E7 /* CZWelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		121D3E161BE63D03002246E7 /* CZNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D3E151BE63D03002246E7 /* CZNewFeatureViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		124E85B11BE6653B003F5D7A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124E85B01BE6653B003F5D7A /* UIColor+Extension.swift */; settings = {ASSET_TAGS = (); }; };
+		127534621BE8400A00362DDD /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127534611BE8400A00362DDD /* UIView+AutoLayout.swift */; settings = {ASSET_TAGS = (); }; };
 		127661B81BE0761E00F8A855 /* CZMainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127661B71BE0761E00F8A855 /* CZMainTabBar.swift */; settings = {ASSET_TAGS = (); }; };
 		127661BC1BE0BFB700F8A855 /* CZBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127661BB1BE0BFB700F8A855 /* CZBaseTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		127661BE1BE0C3C000F8A855 /* CZVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127661BD1BE0C3C000F8A855 /* CZVistorView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -48,10 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CZNetwoorkTools.swift; path = "../Module(模块)/Profile(我)/CZNetwoorkTools.swift"; sourceTree = "<group>"; };
+		120D78DC1BE3A0B4007ADA9D /* CZNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CZNetworkTools.swift; path = "../Module(模块)/Profile(我)/CZNetworkTools.swift"; sourceTree = "<group>"; };
 		121D3E131BE626BA002246E7 /* CZWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZWelcomeViewController.swift; sourceTree = "<group>"; };
 		121D3E151BE63D03002246E7 /* CZNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZNewFeatureViewController.swift; sourceTree = "<group>"; };
 		124E85B01BE6653B003F5D7A /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		127534611BE8400A00362DDD /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		127661B71BE0761E00F8A855 /* CZMainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMainTabBar.swift; sourceTree = "<group>"; };
 		127661BB1BE0BFB700F8A855 /* CZBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZBaseTableViewController.swift; sourceTree = "<group>"; };
 		127661BD1BE0C3C000F8A855 /* CZVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZVistorView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		12A838AC1BDF99A600CDA49A /* Library(第三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				127534611BE8400A00362DDD /* UIView+AutoLayout.swift */,
 			);
 			path = "Library(第三方库)";
 			sourceTree = "<group>";
@@ -390,7 +393,7 @@
 		12A838C31BDF99A600CDA49A /* Tool(工具类) */ = {
 			isa = PBXGroup;
 			children = (
-				120D78DC1BE3A0B4007ADA9D /* CZNetwoorkTools.swift */,
+				120D78DC1BE3A0B4007ADA9D /* CZNetworkTools.swift */,
 			);
 			path = "Tool(工具类)";
 			sourceTree = "<group>";
@@ -612,10 +615,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				12A838CB1BDFA01E00CDA49A /* CZProfileViewController.swift in Sources */,
+				127534621BE8400A00362DDD /* UIView+AutoLayout.swift in Sources */,
 				121D3E141BE626BA002246E7 /* CZWelcomeViewController.swift in Sources */,
 				129D20011BE7867300832E59 /* CZHomeTitleButton.swift in Sources */,
 				127661BC1BE0BFB700F8A855 /* CZBaseTableViewController.swift in Sources */,
-				120D78DD1BE3A0B4007ADA9D /* CZNetwoorkTools.swift in Sources */,
+				120D78DD1BE3A0B4007ADA9D /* CZNetworkTools.swift in Sources */,
 				12A838C71BDF9F9B00CDA49A /* CZDiscoverController.swift in Sources */,
 				12A838CD1BDFA2A600CDA49A /* CZHomeViewController.swift in Sources */,
 				12A838C91BDF9FFB00CDA49A /* CZMessageViewController.swift in Sources */,

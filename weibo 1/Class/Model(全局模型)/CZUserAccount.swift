@@ -54,10 +54,13 @@ class CZUserAccount: NSObject, NSCoding{
     //MARK -- 加载用户信息 --
     // 控制调用这个方法,不管成功还是失败,都需要告诉调用者
     func loadUserInfo(finsh:(error:NSError?) ->()){
-        CZNetwoorkTools.shareInstance.locadUserInfo{ (result, error) ->() in if error != nil || result == nil{
+        CZNetworkTools.shareInstance.locadUserInfo{ (result, error) ->() in if error != nil || result == nil{
            finsh (error: error)
+            print("----result\(result)")
+
             return
         }
+            print("----result\(result)")
             //加载成功
             self.name = result!["name"] as? String
             self.avater_large = result!["avater_large"] as? String
@@ -100,7 +103,7 @@ class CZUserAccount: NSObject, NSCoding{
         //        print(userAccount?.expires_date)
         //        print("当前时间:\(NSDate())")
         if userAccount != nil && userAccount?.expires_date?.compare(NSDate()) == NSComparisonResult.OrderedDescending {
-            print("账号有效")
+            print("账号有效:\(userAccount)")
             return userAccount
         }
         return nil

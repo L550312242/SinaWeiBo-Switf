@@ -10,6 +10,11 @@ import UIKit
 
 class CZHomeTitleButton: UIButton {
 
- override
+    override func layoutSubviews() {
+          super.layoutSubviews()
+        //改变箭头位置
+        titleLabel?.frame.origin.x = 0
+        imageView?.frame.origin.x = titleLabel!.frame.width + 3
+    }
 
 }

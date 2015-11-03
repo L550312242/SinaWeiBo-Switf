@@ -17,7 +17,7 @@ class CZOauthViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: "close")
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "填充", style: UIBarButtonItemStyle.Plain, target: self, action: "autoFill")
         //加载网页
-        let request = NSURLRequest(URL: CZNetwoorkTools.shareInstance.oauthRUL())
+        let request = NSURLRequest(URL: CZNetworkTools.shareInstance.oauthRUL())
         webView.loadRequest(request)
 
     }
@@ -57,8 +57,8 @@ extension CZOauthViewController: UIWebViewDelegate{
         print("urlString:\(urlString)")
         
        //加载的不是回调地址
-          //  if !urlString.hasPrefix(CZNetwoorkTools.shareInstance.redirect_uri)
-        if !urlString.hasPrefix(CZNetwoorkTools.shareInstance.redirect_uri)
+          //  if !urlString.hasPrefix(CZNetworkTools.shareInstance.redirect_uri)
+        if !urlString.hasPrefix(CZNetworkTools.shareInstance.redirect_uri)
         {
             return true   //可以加载
         }
@@ -86,7 +86,8 @@ extension CZOauthViewController: UIWebViewDelegate{
     - parameter code: code
     */
     func loadAccessToken(code: String){
-        CZNetwoorkTools.shareInstance.loadAccessToken(code){(result, error) -> () in
+        CZNetworkTools.shareInstance.loadAccessToken(code){(result, error) -> () in
+            print("--error\(error)---result\(result)")
             if error != nil || result == nil{
              //   self.
 //                SVProgressHUD.showErrorWithStatus("网络不给力",maskType:SVProgressHUDMaskType.Black)
@@ -105,7 +106,7 @@ extension CZOauthViewController: UIWebViewDelegate{
                 self.netError("加载用户数据出错...")
                 return
                 }
-                print("account:\(CZUserAccount.loadAccount())")
+                print("---account:\(CZUserAccount.loadAccount())")
                 self.close()
                 (UIApplication.sharedApplication().delegate as! AppDelegate).switchRootController(false)
             })

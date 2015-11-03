@@ -3,12 +3,34 @@ import UIKit
 
 import AFNetworking
 
-class CZNetwoorkTools: NSObject {
+enum CZNetworkError:Int{
+    case emptyToken = -1
+    case emptyUid = -2
+    //枚举里面可以有属性
+    var description: String{
+        get{
+            //根据枚举的类型返回对应的错误
+            switch self{
+            case CZNetworkError.emptyToken:
+                return "accecc token 为空"
+                case CZNetworkError.emptyUid:
+                return "uid 为空"
+            }
+        }
+    }
+    //枚举可以定义方法
+    func error() -> NSError{
+        return NSError(domain: "cn.itcast.error.network", code: rawValue, userInfo: ["errorDescription" : description])
+    }
+}
+
+
+class CZNetworkTools: NSObject {
     
     //创建属性
     private var afnManager: AFHTTPSessionManager
     //创建单例
-    static let shareInstance: CZNetwoorkTools = CZNetwoorkTools()
+    static let shareInstance: CZNetworkTools = CZNetworkTools()
     override init() {
         let urlString = "https://api.weibo.com/"
         afnManager = AFHTTPSessionManager(baseURL: NSURL(string: urlString))
@@ -16,11 +38,11 @@ class CZNetwoorkTools: NSObject {
         //        return tool
     }
     //创建单例
-//    static let shareInstance: CZNetwoorkTools = {
+//    static let shareInstance: CZNetworkTools = {
 //      
 //        let urlString = "https://api.weibo.com/"
 //        
-//        let tool = CZNetwoorkTools(baseURL: NSURL(string: urlString))
+//        let tool = CZNetworkTools(baseURL: NSURL(string: urlString))
 //        
 //        tool.responseSerializer.acceptableContentTypes?.insert("text/plain")
 //        return tool
@@ -34,7 +56,7 @@ class CZNetwoorkTools: NSObject {
     private let client_secret = "85c06597321e71f6147fb2384e284c23"
     
     //请求的类型，填写authorization_code
-    private let grant_type = "authorization_code "
+    private let grant_type = "authorization_code"
     
     //回调地址
      let redirect_uri = "http://www.baidu.com/"
@@ -72,14 +94,27 @@ class CZNetwoorkTools: NSObject {
     }
     //MAKE: - 获取用户信息
     func locadUserInfo(finshed: NetworkFinishedCallback){
-        // 判断accessToken
-        if CZUserAccount.loadAccount()?.access_token == nil {
+        
+        //判断accessToken
+        if CZUserAccount.loadAccount()?.access_token == nil{
             print("没有accessToken")
+            // 自定义error
+            // domain: 自定义,表示错误范围
+            // code: 错误代码:自定义.负数开头,
+            // userInfo: 错误附加信息
+//          let error = NSError(domain: "cn.itcast.error.network", code: -1, userInfo: ["description" : "没有accessToken"])
+            let error = CZNetworkError.emptyToken.error()
+            //告诉调用者
+            finshed(result: nil, error: error)
             return
+            // 创建枚举
         }
         // 判断uid
-        if CZUserAccount.loadAccount()?.uid == nil{
-            print("没有uid")
+        if CZUserAccount.loadAccount()?.uid == nil
+        {
+           let error = CZNetworkError.emptyUid.error()
+            //告诉调用者
+        finshed(result: nil, error: error)
             return
         }
         //url
