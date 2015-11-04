@@ -59,11 +59,11 @@ extension CZOauthViewController: UIWebViewDelegate{
        //加载的不是回调地址
           //  if !urlString.hasPrefix(CZNetworkTools.shareInstance.redirect_uri)
         if !urlString.hasPrefix(CZNetworkTools.shareInstance.redirect_uri)
-        {
+        {   //如果点击的是确定或取消拦截不加载
+     
             return true   //可以加载
         }
         
-        //如果点击的是确定或取消拦截不加载
         if let query = request.URL?.query{
             print("query:\(query)")
             let codeString = "code="

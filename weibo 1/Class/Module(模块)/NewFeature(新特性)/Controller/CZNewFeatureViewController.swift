@@ -112,13 +112,14 @@ class CZNewFeatureViewController: UICollectionViewController {
             //添加约束
             backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
             startButton.translatesAutoresizingMaskIntoConstraints = false
-            //VFL
-           contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[bak]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bak" :backgroundImageView]))
-            contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[bck]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bck": backgroundImageView]))
+           //VFL
+        //   contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[bak]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bak" :backgroundImageView]))
+        //    contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[bck]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bck": backgroundImageView]))
+            backgroundImageView.ff_Fill(contentView)
             //开始体验按钮
-            contentView.addConstraint(NSLayoutConstraint(item: startButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-            contentView.addConstraint(NSLayoutConstraint(item: startButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -160))
-          
+          //  contentView.addConstraint(NSLayoutConstraint(item: startButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+          //  contentView.addConstraint(NSLayoutConstraint(item: startButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -160))
+          startButton.ff_AlignInner(type: ff_AlignType.BottomCenter, referView: contentView, size: nil, offset: CGPoint(x: 0, y: -160))
         }
       //  点击事件
        

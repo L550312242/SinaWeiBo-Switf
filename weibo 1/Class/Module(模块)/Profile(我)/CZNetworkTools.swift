@@ -95,52 +95,106 @@ class CZNetworkTools: NSObject {
     //MAKE: - 获取用户信息
     func locadUserInfo(finshed: NetworkFinishedCallback){
         
-        //判断accessToken
-        if CZUserAccount.loadAccount()?.access_token == nil{
+        //守卫,和可选绑定相反
+        //  parameters代码块里面和外面都能使用
+        guard var parameters = tokenDict() else{
+        //guard var parameters = tokenDict() else {
+        //来到这里表示有parameters值
             print("没有accessToken")
+            
             // 自定义error
             // domain: 自定义,表示错误范围
             // code: 错误代码:自定义.负数开头,
             // userInfo: 错误附加信息
-//          let error = NSError(domain: "cn.itcast.error.network", code: -1, userInfo: ["description" : "没有accessToken"])
+           
             let error = CZNetworkError.emptyToken.error()
+            
             //告诉调用者
             finshed(result: nil, error: error)
             return
-            // 创建枚举
+        
         }
         // 判断uid
         if CZUserAccount.loadAccount()?.uid == nil
         {
+            print("没有uid")
            let error = CZNetworkError.emptyUid.error()
             //告诉调用者
         finshed(result: nil, error: error)
             return
         }
         //url
-        let urlString = "https://api.weibo.com/2/users/show.json"
-        //参数
-        let parameters = [
-            "accessToken": CZUserAccount.loadAccount()!.access_token!,"uid":CZUserAccount.loadAccount()!.uid!
-        ]
+        //https://api.weibo.com/2/users/show.json?access_token=2.00mmnprD0MPWwX0cbad42a5dzzLvrD&uid=3543890412
+        
+        //https://api.weibo.com/2/users/show.json?access_Token=2.00mmnprD0MPWwX0cbad42a5dzzLvrD&uid=3543890412
+       let urlString = "https://api.weibo.com/2/users/show.json"
+        //添加元素
+      
+         parameters["uid"] = CZUserAccount.loadAccount()!.uid!
         requestGET(urlString,parameters:parameters, finshed:finshed)
-//        //发送请求
-//       afnManager.GET(urlString, parameters: parameters, success: { (_, result) -> Void in
-//            finshed(result: result as? [String: AnyObject], error: nil)
-//            }) { (_, error) -> Void in
-//                finshed(result: nil, error: error)
-//        }
-
     }
+        //判断access Token是否有值，没有值返回nil,有值，生成一个 字典
+      func tokenDict() -> [String:AnyObject]?
+//        func tokenDict() -> [String: AnyObject]?
+        {
+            if CZUserAccount.loadAccount()?.access_token == nil{
+                return nil
+            }
+            return ["access_token":CZUserAccount.loadAccount()!.access_token!]
+        }
+    // Mark: 获取微博数据
+    func loadStatus(finished:NetworkFinishedCallback){
+        
+        guard let paramenters = tokenDict()else{
+            //能到这里来说明token没有值
+            
+            //告诉调用者
+        finished(result: nil, error: CZNetworkError.emptyToken.error())
+            return
+        }
+        // access_token 有值
+        let urlString = "2/statuses/home_timeline.json"
+        // 网络不给力，加载本地数据
+        loadLocalStatus(finished)
+    //    requestGET(urlString, parameters: paramenters, finshed: finished)
+        
+    }
+    private func loadLocalStatus(finished: NetworkFinishedCallback){
+        //获取路径
+     let path =  NSBundle .mainBundle().pathForResource("statuses", ofType: "json")
+        //加载文件数据
+        let data = NSData(contentsOfFile: path!)
+        
+        //转成json
+        do {
+            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0))
+            //有数据
+            finished(result: json as? [String: AnyObject], error: nil)
+        } catch {
+            print("出异常了")
+        }
+       
+    }
+    //        //判断access token是否有值，没有值返回nil，如果有值生成一个字典
+    //        func tokenDict() -> [String:AnyObject]?{
+    //            if CZUserAccount.loadAccount()?.access_token == nil{
+    //                return nil
+    //            }
+    //            return["access_token":CZUserAccount.loadAccount()!.access_token!]
+    //        }
+
+    // 类型别名 = typedefined
     typealias NetworkFinishedCallback = (result: [String: AnyObject]?, error: NSError?) -> ()
 
     //MARK:  --- 封装AFN.GET ---
     func requestGET(URLString: String, parameters: AnyObject?, finshed: NetworkFinishedCallback) {
         
+    //    print(URLString)
         afnManager.GET(URLString, parameters: parameters, success: { (_, result) -> Void in
+          //  print(result)
             finshed(result: result as? [String: AnyObject], error: nil)
             }) { (_, error) -> Void in
-                finshed(result: nil, error: error)
+            //    print(error)
+                finshed(result: nil, error: error)}
         }
     }
-}

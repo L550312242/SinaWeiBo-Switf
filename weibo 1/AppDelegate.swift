@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabbar = CZMainViewController()
         //?: 如果？前面的变量有值才执行后面的代码
         window?.rootViewController = defaultController()
-        
+       // window?.rootViewController = CZOauthViewController()
         //成为主窗口并显示
         window?.makeKeyAndVisible()
         
