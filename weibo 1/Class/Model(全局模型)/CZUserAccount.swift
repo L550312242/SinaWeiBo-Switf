@@ -56,14 +56,15 @@ class CZUserAccount: NSObject, NSCoding{
     func loadUserInfo(finsh:(error:NSError?) ->()){
         CZNetworkTools.shareInstance.locadUserInfo{ (result, error) ->() in if error != nil || result == nil{
            finsh (error: error)
-            print("----result\(result)")
+      //       print("----result\(result)")
 
             return
         }
-            print("----result\(result)")
+      //      print("----result\(result)")
             //加载成功
             self.name = result!["name"] as? String
-            self.avater_large = result!["avater_large"] as? String
+            self.avater_large = result!["avatar_large"] as? String//avatar_large
+      //   print("wang:avater_large\(self.avater_large)")
             //保存到沙盒
             self.saveAccount()
             

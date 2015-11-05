@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class CZStatusTopView: UIView {
     // MARK: - 微博模型
     var status: CZStatus?{
@@ -44,6 +46,7 @@ class CZStatusTopView: UIView {
     //MARK: -- 准备UI --
     private func prepareUI(){
         //添加子控件
+        addSubview(topSeparatorView)
         addSubview(iconView)                /// 用户头像
         addSubview(nameLabel)               /// 用户名称
         addSubview(timeLabel)               /// 时间label
@@ -52,23 +55,31 @@ class CZStatusTopView: UIView {
         addSubview(memberView)            /// 会员等级
         
         //添加约束
+        topSeparatorView.ff_AlignInner(type: ff_AlignType.TopLeft, referView: self, size: CGSize(width: UIScreen.width(), height: 10))
         //头像约束
-        iconView.ff_AlignInner(type: ff_AlignType.TopLeft, referView: self, size: CGSize(width: 35, height: 35), offset: CGPoint(x: 8, y: 0))
+        iconView.ff_AlignVertical(type: ff_AlignType.BottomLeft, referView: topSeparatorView, size: CGSize(width: 35, height: 35), offset: CGPoint(x: StatusCellMargin, y: 0))
         
         //用户名称
-        nameLabel.ff_AlignHorizontal(type: ff_AlignType.TopRight, referView: iconView, size: nil, offset: CGPoint(x: 8, y: 0))
+        nameLabel.ff_AlignHorizontal(type: ff_AlignType.TopRight, referView: iconView, size: nil, offset: CGPoint(x: StatusCellMargin, y: 0))
         //时间约束
-        timeLabel.ff_AlignHorizontal(type: ff_AlignType.BottomRight, referView: iconView, size: nil, offset: CGPoint(x: 8, y: 0))
+        timeLabel.ff_AlignHorizontal(type: ff_AlignType.BottomRight, referView: iconView, size: nil, offset: CGPoint(x: StatusCellMargin, y: 0))
         
         //来源
-        sourceLabel.ff_AlignHorizontal(type: ff_AlignType.CenterRight, referView: timeLabel, size: nil, offset: CGPoint(x: 8, y: 0))
+        sourceLabel.ff_AlignHorizontal(type: ff_AlignType.CenterRight, referView: timeLabel, size: nil, offset: CGPoint(x: StatusCellMargin, y: 0))
         
         //会员等级
-        memberView.ff_AlignHorizontal(type: ff_AlignType.CenterRight, referView: nameLabel, size: CGSize(width: 14, height: 14), offset: CGPoint(x: 8, y: 0))
+        memberView.ff_AlignHorizontal(type: ff_AlignType.CenterRight, referView: nameLabel, size: CGSize(width: 14, height: 14), offset: CGPoint(x: StatusCellMargin, y: 0))
         //认证图标
         verifiedView.ff_AlignInner(type: ff_AlignType.BottomRight, referView: iconView, size: CGSize(width: 17, height: 17), offset:CGPoint(x: 8.5, y: 8.5) )
     }
     // MARK: - 懒加载
+    /// 顶部分割视图
+    private lazy var topSeparatorView: UIView = {
+       let view = UIView()
+        //背景
+        view.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        return view
+    }()
     /// 用户头像
     private lazy var iconView = UIImageView()
     

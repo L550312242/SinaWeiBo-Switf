@@ -98,6 +98,7 @@ extension CZOauthViewController: UIWebViewDelegate{
                 self.netError("网络不给力")
                 return
             }
+//            print("wang:\(result)")
             let account = CZUserAccount(dict: result!)
             //保存到沙盒
             account.saveAccount()

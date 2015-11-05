@@ -21,6 +21,7 @@
 		1287A7251BE92C67008151ED /* statuses.json in Resources */ = {isa = PBXBuildFile; fileRef = 1287A7241BE92C67008151ED /* statuses.json */; settings = {ASSET_TAGS = (); }; };
 		128C31401BE98E3A00AD4127 /* CZStatusBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C313F1BE98E3A00AD4127 /* CZStatusBottomView.swift */; settings = {ASSET_TAGS = (); }; };
 		128C31421BE98F5500AD4127 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C31411BE98F5500AD4127 /* UIButton+Extension.swift */; settings = {ASSET_TAGS = (); }; };
+		128F05481BEB867900D0B9D1 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F05471BEB867900D0B9D1 /* UIImageView+Extension.swift */; settings = {ASSET_TAGS = (); }; };
 		129D1FFD1BE7381D00832E59 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D1FFC1BE7381D00832E59 /* UIBarButtonItem+Extension.swift */; settings = {ASSET_TAGS = (); }; };
 		129D20011BE7867300832E59 /* CZHomeTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D20001BE7867300832E59 /* CZHomeTitleButton.swift */; settings = {ASSET_TAGS = (); }; };
 		12A8387D1BDF98D600CDA49A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A8387C1BDF98D600CDA49A /* AppDelegate.swift */; };
@@ -33,7 +34,11 @@
 		12A838CB1BDFA01E00CDA49A /* CZProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A838CA1BDFA01E00CDA49A /* CZProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		12A838CD1BDFA2A600CDA49A /* CZHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A838CC1BDFA2A600CDA49A /* CZHomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		12A9D2261BE3F06100D7107F /* CZUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9D2251BE3F06100D7107F /* CZUserAccount.swift */; settings = {ASSET_TAGS = (); }; };
+		12B11AB01BEA6FF5001D0FD6 /* CZStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B11AAF1BEA6FF5001D0FD6 /* CZStatusPictureView.swift */; settings = {ASSET_TAGS = (); }; };
+		12B11AB21BEA8485001D0FD6 /* CZStatusForwardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B11AB11BEA8485001D0FD6 /* CZStatusForwardCell.swift */; settings = {ASSET_TAGS = (); }; };
+		12B11AB41BEA8A83001D0FD6 /* CZStatusNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B11AB31BEA8A83001D0FD6 /* CZStatusNormalCell.swift */; settings = {ASSET_TAGS = (); }; };
 		12C826651BE33FDF00230505 /* CZOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C826641BE33FDF00230505 /* CZOauthViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		12EFA4FB1BEA3C6800BC46B5 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EFA4FA1BEA3C6800BC46B5 /* UIScreen+Extension.swift */; settings = {ASSET_TAGS = (); }; };
 		12FF74E91BE8DCA100E9325D /* CZStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF74E81BE8DCA100E9325D /* CZStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
 		12FF74EB1BE8DD2800E9325D /* CZStatusTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF74EA1BE8DD2800E9325D /* CZStatusTopView.swift */; settings = {ASSET_TAGS = (); }; };
 		B2572228DF521FF681F73C77 /* Pods_weibo_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25225BF1E73FF13AA6588C8 /* Pods_weibo_1.framework */; };
@@ -71,6 +76,7 @@
 		1287A7241BE92C67008151ED /* statuses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = statuses.json; sourceTree = "<group>"; };
 		128C313F1BE98E3A00AD4127 /* CZStatusBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZStatusBottomView.swift; sourceTree = "<group>"; };
 		128C31411BE98F5500AD4127 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		128F05471BEB867900D0B9D1 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		129D1FFC1BE7381D00832E59 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		129D20001BE7867300832E59 /* CZHomeTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZHomeTitleButton.swift; sourceTree = "<group>"; };
 		12A838791BDF98D600CDA49A /* weibo 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +95,11 @@
 		12A838CA1BDFA01E00CDA49A /* CZProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZProfileViewController.swift; sourceTree = "<group>"; };
 		12A838CC1BDFA2A600CDA49A /* CZHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZHomeViewController.swift; sourceTree = "<group>"; };
 		12A9D2251BE3F06100D7107F /* CZUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZUserAccount.swift; sourceTree = "<group>"; };
+		12B11AAF1BEA6FF5001D0FD6 /* CZStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZStatusPictureView.swift; sourceTree = "<group>"; };
+		12B11AB11BEA8485001D0FD6 /* CZStatusForwardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZStatusForwardCell.swift; sourceTree = "<group>"; };
+		12B11AB31BEA8A83001D0FD6 /* CZStatusNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZStatusNormalCell.swift; sourceTree = "<group>"; };
 		12C826641BE33FDF00230505 /* CZOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZOauthViewController.swift; sourceTree = "<group>"; };
+		12EFA4FA1BEA3C6800BC46B5 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		12FF74E81BE8DCA100E9325D /* CZStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZStatusCell.swift; sourceTree = "<group>"; };
 		12FF74EA1BE8DD2800E9325D /* CZStatusTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZStatusTopView.swift; sourceTree = "<group>"; };
 		3A7B0A3A5A44D39D83D9C825 /* Pods-weibo 1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo 1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weibo 1/Pods-weibo 1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +221,8 @@
 				129D1FFC1BE7381D00832E59 /* UIBarButtonItem+Extension.swift */,
 				1287A7221BE924DE008151ED /* UILabel_Extension.swift */,
 				128C31411BE98F5500AD4127 /* UIButton+Extension.swift */,
+				12EFA4FA1BEA3C6800BC46B5 /* UIScreen+Extension.swift */,
+				128F05471BEB867900D0B9D1 /* UIImageView+Extension.swift */,
 			);
 			path = "Extension(扩展)";
 			sourceTree = "<group>";
@@ -307,10 +319,13 @@
 		12A838B61BDF99A600CDA49A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				12FF74E81BE8DCA100E9325D /* CZStatusCell.swift */,
+				12B11AB31BEA8A83001D0FD6 /* CZStatusNormalCell.swift */,
+				12B11AB11BEA8485001D0FD6 /* CZStatusForwardCell.swift */,
 				129D20001BE7867300832E59 /* CZHomeTitleButton.swift */,
 				12FF74EA1BE8DD2800E9325D /* CZStatusTopView.swift */,
-				12FF74E81BE8DCA100E9325D /* CZStatusCell.swift */,
 				128C313F1BE98E3A00AD4127 /* CZStatusBottomView.swift */,
+				12B11AAF1BEA6FF5001D0FD6 /* CZStatusPictureView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -640,13 +655,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				128F05481BEB867900D0B9D1 /* UIImageView+Extension.swift in Sources */,
 				12A838CB1BDFA01E00CDA49A /* CZProfileViewController.swift in Sources */,
 				127534641BE8994100362DDD /* CZStatus.swift in Sources */,
+				12B11AB21BEA8485001D0FD6 /* CZStatusForwardCell.swift in Sources */,
 				127534621BE8400A00362DDD /* UIView+AutoLayout.swift in Sources */,
 				1287A7231BE924DE008151ED /* UILabel_Extension.swift in Sources */,
 				12FF74EB1BE8DD2800E9325D /* CZStatusTopView.swift in Sources */,
 				1217D98D1BE8D0E20048F13C /* CZUser.swift in Sources */,
 				12FF74E91BE8DCA100E9325D /* CZStatusCell.swift in Sources */,
+				12EFA4FB1BEA3C6800BC46B5 /* UIScreen+Extension.swift in Sources */,
 				121D3E141BE626BA002246E7 /* CZWelcomeViewController.swift in Sources */,
 				128C31421BE98F5500AD4127 /* UIButton+Extension.swift in Sources */,
 				129D20011BE7867300832E59 /* CZHomeTitleButton.swift in Sources */,
@@ -661,10 +679,12 @@
 				124E85B11BE6653B003F5D7A /* UIColor+Extension.swift in Sources */,
 				12C826651BE33FDF00230505 /* CZOauthViewController.swift in Sources */,
 				121D3E161BE63D03002246E7 /* CZNewFeatureViewController.swift in Sources */,
+				12B11AB41BEA8A83001D0FD6 /* CZStatusNormalCell.swift in Sources */,
 				12A8387D1BDF98D600CDA49A /* AppDelegate.swift in Sources */,
 				127661BE1BE0C3C000F8A855 /* CZVistorView.swift in Sources */,
 				129D1FFD1BE7381D00832E59 /* UIBarButtonItem+Extension.swift in Sources */,
 				12A9D2261BE3F06100D7107F /* CZUserAccount.swift in Sources */,
+				12B11AB01BEA6FF5001D0FD6 /* CZStatusPictureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

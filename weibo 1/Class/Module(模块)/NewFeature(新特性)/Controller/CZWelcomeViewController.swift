@@ -12,9 +12,11 @@ class CZWelcomeViewController: UIViewController {
         perpareUI()
         
         //设置用户头像
+     //   iconView.image = UIImage(named: "tumblr_l7ja4mKGAg1qcb9pro1_400 (1)")
        if let urlString = CZUserAccount.loadAccount()?.avater_large {
-        
-        iconView.sd_setImageWithURL(NSURL (string: urlString), placeholderImage: UIImage(named: "tumblr_l7ja4mKGAg1qcb9pro1_400 (1)"))
+//        print("用户头像\(urlString)")
+        iconView.cz_setImageWithURL(NSURL (string: urlString), placeholderImage: UIImage(named: "tumblr_l7ja4mKGAg1qcb9pro1_400 (1)"))
+        //tumblr_l7ja4mKGAg1qcb9pro1_400 (1)
         }
 
     }

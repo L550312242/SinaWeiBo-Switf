@@ -86,7 +86,7 @@ class CZNetworkTools: NSObject {
         
         //result //请求结果
       afnManager.POST(urlString, parameters: parameters, success: { (_, result ) -> Void in
-            print("result:\(result   )")
+            print("result:\(result)")
             finshed(result: result as? [String:AnyObject], error: nil)
             }){(_,errno:NSError) -> Void in
          finshed(result: nil, error: errno)

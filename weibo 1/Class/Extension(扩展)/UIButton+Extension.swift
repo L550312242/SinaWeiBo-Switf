@@ -19,8 +19,11 @@ extension UIButton{
     - parameter fontSize:   标题大小
     - returns: 按钮
     */
-    convenience init(imageName: String, title:String, titleColor: UIColor.lightGrayColor(), fontSize: CGFloat = 12){
+    convenience init(imageName: String, title: String, titleColor: UIColor = UIColor.lightGrayColor(), fontSize: CGFloat = 12){
         self.init()
-        setiam
+        setImage(UIImage(named: imageName), forState: UIControlState.Normal)
+        setTitle(title, forState: UIControlState.Normal)
+        setTitleColor(titleColor, forState: UIControlState.Normal)
+        titleLabel?.font = UIFont.systemFontOfSize(fontSize)
     }
 }

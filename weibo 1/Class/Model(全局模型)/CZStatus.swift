@@ -23,10 +23,61 @@ class CZStatus: NSObject {
     
     // 通过分析微博返回的数据 是一个数组,数组里面是一个字典["thumbnail_pic": url]
     /// 微博的配图
-    var pic_urls: [[String: AnyObject]]?
+    var pic_urls: [[String: AnyObject]]?{
+        didSet {
+            // 当字典转模型,给pic_urls赋值的时候,将数组里面的url转成NSURL赋值给storePictureURLs
+            
+            // 判断有没有图片
+            let count = pic_urls?.count ?? 0
+            // 没有图片,直接返回
+            if count == 0 {
+                return
+            }
+            
+            // 创建storePictureURLs
+            storePictureURLs = [NSURL]()
+            
+            for dict in pic_urls! {
+                if let urlString = dict["thumbnail_pic"] as? String {
+                    // 有url地址
+                    storePictureURLs?.append(NSURL(string: urlString)!)
+                }
+            }
+        }
+    }
     
+    /// 返回 微博的配图 对应的URL数组
+    var storePictureURLs: [NSURL]?
+    
+    /// 如果是原创微博,就返回原创微博的图片,如果是转发微博就返回被转发微博的图片
+    /// 计算型属性,
+    var pictureURLs: [NSURL]? {
+        get {
+            // 判断:
+            // 1.原创微博: 返回 storePictureURLs
+            // 2.转发微博: 返回 retweeted_status.storePictureURLs
+            return retweeted_status == nil ? storePictureURLs : retweeted_status!.storePictureURLs
+        }
+        
+        
+    }
+ 
     //用户模型
     var user: CZUser?
+    
+    /// 缓存行高 
+    var rowHeight: CGFloat?
+    
+    /// 被转发微博
+    var retweeted_status: CZStatus?
+    
+    // 根据模型里面的retweeted_status来判断是原创微博还是转发微博
+    /// 返回微博cell对应的Identifier
+    func cellID() -> String {
+     //    retweeted_status == nil表示原创微博
+       return retweeted_status == nil ? CZStatusCellIdentifier.NormalCell.rawValue : CZStatusCellIdentifier.ForwardCell.rawValue
+    }
+    
 
     // 字典转模型
     init(dict:[String: AnyObject]){
@@ -45,6 +96,15 @@ class CZStatus: NSObject {
                 //一定要记得return,不加就会调用父类
                 return
             }
+        }else if key == "retweeted_status" {
+            if let dict = value as? [String: AnyObject] {
+                // 字典转模型
+                // 被转发的微博
+                retweeted_status = CZStatus(dict: dict)
+            }
+            
+            // 千万要记住 return
+            return
         }
         return super.setValue(value, forKey: key)
     }
