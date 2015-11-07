@@ -30,7 +30,8 @@ class CZNetworkTools: NSObject {
     //创建属性
     private var afnManager: AFHTTPSessionManager
     //创建单例
-    static let shareInstance: CZNetworkTools = CZNetworkTools()
+    static let sharedInstance: CZNetworkTools = CZNetworkTools()
+    
     override init() {
         let urlString = "https://api.weibo.com/"
         afnManager = AFHTTPSessionManager(baseURL: NSURL(string: urlString))
@@ -38,7 +39,7 @@ class CZNetworkTools: NSObject {
         //        return tool
     }
     //创建单例
-//    static let shareInstance: CZNetworkTools = {
+//    static let sharedInstance: CZNetworkTools = {
 //      
 //        let urlString = "https://api.weibo.com/"
 //        
@@ -86,9 +87,9 @@ class CZNetworkTools: NSObject {
         
         //result //请求结果
       afnManager.POST(urlString, parameters: parameters, success: { (_, result ) -> Void in
-            print("result:\(result)")
+        //    print("result:\(result)")
             finshed(result: result as? [String:AnyObject], error: nil)
-            }){(_,errno:NSError) -> Void in
+            }) { (_,errno:NSError) -> Void in
          finshed(result: nil, error: errno)
         }
     }
@@ -131,7 +132,7 @@ class CZNetworkTools: NSObject {
         //添加元素
       
          parameters["uid"] = CZUserAccount.loadAccount()!.uid!
-        requestGET(urlString,parameters:parameters, finshed:finshed)
+        requestGET(urlString, parameters: parameters, finshed: finshed)
     }
         //判断access Token是否有值，没有值返回nil,有值，生成一个 字典
       func tokenDict() -> [String:AnyObject]?
@@ -143,20 +144,35 @@ class CZNetworkTools: NSObject {
             return ["access_token":CZUserAccount.loadAccount()!.access_token!]
         }
     // Mark: 获取微博数据
-    func loadStatus(finished:NetworkFinishedCallback){
-        
-        guard let paramenters = tokenDict()else{
+    /**
+    加载微博数据
+    - parameter since_id: 若指定此参数，则返回ID比since_id大的微博,默认为0
+    - parameter max_id:   若指定此参数，则返回ID小于或等于max_id的微博,默认为0
+    - parameter finished: 回调
+    */
+    func loadStatus(since_id: Int, max_id: Int, finished:NetworkFinishedCallback){
+        guard var parameters = tokenDict()else{
             //能到这里来说明token没有值
             
             //告诉调用者
         finished(result: nil, error: CZNetworkError.emptyToken.error())
             return
         }
+        // 添加参数 since_id和max_id
+        // 判断是否有传since_id,max_id
+        if since_id > 0 {
+            parameters["since_id"] = since_id
+        } else if max_id > 0 {
+            parameters["max_id"] = max_id - 1
+        }
         // access_token 有值
         let urlString = "2/statuses/home_timeline.json"
         // 网络不给力，加载本地数据
-        loadLocalStatus(finished)
-    //    requestGET(urlString, parameters: paramenters, finshed: finished)
+        if true {
+            requestGET(urlString, parameters: parameters, finshed: finished)
+        } else {
+            loadLocalStatus(finished)
+        }
         
     }
     private func loadLocalStatus(finished: NetworkFinishedCallback){
@@ -175,13 +191,7 @@ class CZNetworkTools: NSObject {
         }
        
     }
-    //        //判断access token是否有值，没有值返回nil，如果有值生成一个字典
-    //        func tokenDict() -> [String:AnyObject]?{
-    //            if CZUserAccount.loadAccount()?.access_token == nil{
-    //                return nil
-    //            }
-    //            return["access_token":CZUserAccount.loadAccount()!.access_token!]
-    //        }
+  
 
     // 类型别名 = typedefined
     typealias NetworkFinishedCallback = (result: [String: AnyObject]?, error: NSError?) -> ()
@@ -189,12 +199,11 @@ class CZNetworkTools: NSObject {
     //MARK:  --- 封装AFN.GET ---
     func requestGET(URLString: String, parameters: AnyObject?, finshed: NetworkFinishedCallback) {
         
-    //    print(URLString)
+   
         afnManager.GET(URLString, parameters: parameters, success: { (_, result) -> Void in
-          //  print(result)
             finshed(result: result as? [String: AnyObject], error: nil)
             }) { (_, error) -> Void in
-            //    print(error)
+          
                 finshed(result: nil, error: error)}
         }
     }

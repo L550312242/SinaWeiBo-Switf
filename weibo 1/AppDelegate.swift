@@ -43,11 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //获取当前版本号
     let versionString = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
         let currentVersion = Double(versionString)!
-        print("currentVersion: \(currentVersion)")
+      //  print("currentVersion: \(currentVersion)")
         //获取到之前的版本号
         let sandboxVersionKey = "sandboxVersionKey"
         let sandboxVersion = NSUserDefaults.standardUserDefaults().doubleForKey(sandboxVersionKey)
-        print("sandboxVersion: \(sandboxVersion)")
+      //  print("sandboxVersion: \(sandboxVersion)")
         //保存当前版本号
         NSUserDefaults.standardUserDefaults().setDouble(currentVersion, forKey: sandboxVersionKey)
         //对比

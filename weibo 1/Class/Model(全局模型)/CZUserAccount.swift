@@ -54,7 +54,7 @@ class CZUserAccount: NSObject, NSCoding{
     //MARK -- 加载用户信息 --
     // 控制调用这个方法,不管成功还是失败,都需要告诉调用者
     func loadUserInfo(finsh:(error:NSError?) ->()){
-        CZNetworkTools.shareInstance.locadUserInfo{ (result, error) ->() in if error != nil || result == nil{
+        CZNetworkTools.sharedInstance.locadUserInfo{ (result, error) ->() in if error != nil || result == nil{
            finsh (error: error)
       //       print("----result\(result)")
 

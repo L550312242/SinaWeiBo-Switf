@@ -38,6 +38,10 @@
 		12B11AB21BEA8485001D0FD6 /* CZStatusForwardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B11AB11BEA8485001D0FD6 /* CZStatusForwardCell.swift */; settings = {ASSET_TAGS = (); }; };
 		12B11AB41BEA8A83001D0FD6 /* CZStatusNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B11AB31BEA8A83001D0FD6 /* CZStatusNormalCell.swift */; settings = {ASSET_TAGS = (); }; };
 		12C826651BE33FDF00230505 /* CZOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C826641BE33FDF00230505 /* CZOauthViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		12CCB4791BECE41500D7B3FD /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CCB4781BECE41500D7B3FD /* RefreshControl.swift */; settings = {ASSET_TAGS = (); }; };
+		12CCB47B1BECE71F00D7B3FD /* CZRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12CCB47A1BECE71F00D7B3FD /* CZRefreshView.xib */; settings = {ASSET_TAGS = (); }; };
+		12CCB4851BED0B9D00D7B3FD /* CZComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CCB4841BED0B9D00D7B3FD /* CZComposeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		12CCB4871BED0C0500D7B3FD /* CZPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CCB4861BED0C0500D7B3FD /* CZPlaceholderTextView.swift */; settings = {ASSET_TAGS = (); }; };
 		12EFA4FB1BEA3C6800BC46B5 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EFA4FA1BEA3C6800BC46B5 /* UIScreen+Extension.swift */; settings = {ASSET_TAGS = (); }; };
 		12FF74E91BE8DCA100E9325D /* CZStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF74E81BE8DCA100E9325D /* CZStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
 		12FF74EB1BE8DD2800E9325D /* CZStatusTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF74EA1BE8DD2800E9325D /* CZStatusTopView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -96,11 +100,15 @@
 		12A838CC1BDFA2A600CDA49A /* CZHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZHomeViewController.swift; sourceTree = "<group>"; };
 		12A9D2251BE3F06100D7107F /* CZUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZUserAccount.swift; sourceTree = "<group>"; };
 		12B11AAF1BEA6FF5001D0FD6 /* CZStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZStatusPictureView.swift; sourceTree = "<group>"; };
-		12B11AB11BEA8485001D0FD6 /* CZStatusForwardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZStatusForwardCell.swift; sourceTree = "<group>"; };
-		12B11AB31BEA8A83001D0FD6 /* CZStatusNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZStatusNormalCell.swift; sourceTree = "<group>"; };
+		12B11AB11BEA8485001D0FD6 /* CZStatusForwardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CZStatusForwardCell.swift; path = ../CZStatusForwardCell.swift; sourceTree = "<group>"; };
+		12B11AB31BEA8A83001D0FD6 /* CZStatusNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CZStatusNormalCell.swift; path = ../CZStatusNormalCell.swift; sourceTree = "<group>"; };
 		12C826641BE33FDF00230505 /* CZOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZOauthViewController.swift; sourceTree = "<group>"; };
+		12CCB4781BECE41500D7B3FD /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		12CCB47A1BECE71F00D7B3FD /* CZRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZRefreshView.xib; sourceTree = "<group>"; };
+		12CCB4841BED0B9D00D7B3FD /* CZComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZComposeViewController.swift; sourceTree = "<group>"; };
+		12CCB4861BED0C0500D7B3FD /* CZPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZPlaceholderTextView.swift; sourceTree = "<group>"; };
 		12EFA4FA1BEA3C6800BC46B5 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
-		12FF74E81BE8DCA100E9325D /* CZStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZStatusCell.swift; sourceTree = "<group>"; };
+		12FF74E81BE8DCA100E9325D /* CZStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CZStatusCell.swift; path = ../CZStatusCell.swift; sourceTree = "<group>"; };
 		12FF74EA1BE8DD2800E9325D /* CZStatusTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZStatusTopView.swift; sourceTree = "<group>"; };
 		3A7B0A3A5A44D39D83D9C825 /* Pods-weibo 1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo 1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weibo 1/Pods-weibo 1.debug.xcconfig"; sourceTree = "<group>"; };
 		46E923A0E7A9CBBF0E3ABBF6 /* Pods-weibo 1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo 1.release.xcconfig"; path = "Pods/Target Support Files/Pods-weibo 1/Pods-weibo 1.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +256,7 @@
 		12A838AE1BDF99A600CDA49A /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				12CCB4801BED02D000D7B3FD /* Compose（发微博） */,
 				121D3E111BE62652002246E7 /* NewFeature(新特性) */,
 				12C826621BE33F8100230505 /* Oauth（授权） */,
 				12A838B71BDF99A600CDA49A /* Main(主要的) */,
@@ -319,9 +328,8 @@
 		12A838B61BDF99A600CDA49A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				12FF74E81BE8DCA100E9325D /* CZStatusCell.swift */,
-				12B11AB31BEA8A83001D0FD6 /* CZStatusNormalCell.swift */,
-				12B11AB11BEA8485001D0FD6 /* CZStatusForwardCell.swift */,
+				12CCB4771BECE31900D7B3FD /* RefreshControl */,
+				12CCB4761BECD7A900D7B3FD /* cell */,
 				129D20001BE7867300832E59 /* CZHomeTitleButton.swift */,
 				12FF74EA1BE8DD2800E9325D /* CZStatusTopView.swift */,
 				128C313F1BE98E3A00AD4127 /* CZStatusBottomView.swift */,
@@ -454,6 +462,59 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		12CCB4761BECD7A900D7B3FD /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				12FF74E81BE8DCA100E9325D /* CZStatusCell.swift */,
+				12B11AB31BEA8A83001D0FD6 /* CZStatusNormalCell.swift */,
+				12B11AB11BEA8485001D0FD6 /* CZStatusForwardCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		12CCB4771BECE31900D7B3FD /* RefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				12CCB4781BECE41500D7B3FD /* RefreshControl.swift */,
+				12CCB47A1BECE71F00D7B3FD /* CZRefreshView.xib */,
+			);
+			path = RefreshControl;
+			sourceTree = "<group>";
+		};
+		12CCB4801BED02D000D7B3FD /* Compose（发微博） */ = {
+			isa = PBXGroup;
+			children = (
+				12CCB4811BED02D000D7B3FD /* Controller */,
+				12CCB4821BED02D000D7B3FD /* Model */,
+				12CCB4831BED02D000D7B3FD /* View */,
+			);
+			name = "Compose（发微博）";
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		12CCB4811BED02D000D7B3FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				12CCB4841BED0B9D00D7B3FD /* CZComposeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		12CCB4821BED02D000D7B3FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12CCB4831BED02D000D7B3FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12CCB4861BED0C0500D7B3FD /* CZPlaceholderTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2CEA7CAE0687EEA4257D5AF4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12A838841BDF98D600CDA49A /* Assets.xcassets in Resources */,
+				12CCB47B1BECE71F00D7B3FD /* CZRefreshView.xib in Resources */,
 				1287A7251BE92C67008151ED /* statuses.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,11 +727,14 @@
 				1217D98D1BE8D0E20048F13C /* CZUser.swift in Sources */,
 				12FF74E91BE8DCA100E9325D /* CZStatusCell.swift in Sources */,
 				12EFA4FB1BEA3C6800BC46B5 /* UIScreen+Extension.swift in Sources */,
+				12CCB4851BED0B9D00D7B3FD /* CZComposeViewController.swift in Sources */,
 				121D3E141BE626BA002246E7 /* CZWelcomeViewController.swift in Sources */,
 				128C31421BE98F5500AD4127 /* UIButton+Extension.swift in Sources */,
 				129D20011BE7867300832E59 /* CZHomeTitleButton.swift in Sources */,
+				12CCB4871BED0C0500D7B3FD /* CZPlaceholderTextView.swift in Sources */,
 				127661BC1BE0BFB700F8A855 /* CZBaseTableViewController.swift in Sources */,
 				120D78DD1BE3A0B4007ADA9D /* CZNetworkTools.swift in Sources */,
+				12CCB4791BECE41500D7B3FD /* RefreshControl.swift in Sources */,
 				12A838C71BDF9F9B00CDA49A /* CZDiscoverController.swift in Sources */,
 				128C31401BE98E3A00AD4127 /* CZStatusBottomView.swift in Sources */,
 				12A838CD1BDFA2A600CDA49A /* CZHomeViewController.swift in Sources */,

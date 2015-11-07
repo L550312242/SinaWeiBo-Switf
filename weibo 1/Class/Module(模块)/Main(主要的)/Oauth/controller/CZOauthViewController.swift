@@ -17,7 +17,7 @@ class CZOauthViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: "close")
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "填充", style: UIBarButtonItemStyle.Plain, target: self, action: "autoFill")
         //加载网页
-        let request = NSURLRequest(URL: CZNetworkTools.shareInstance.oauthRUL())
+        let request = NSURLRequest(URL: CZNetworkTools.sharedInstance.oauthRUL())
         webView.loadRequest(request)
 
     }
@@ -57,8 +57,8 @@ extension CZOauthViewController: UIWebViewDelegate{
         print("urlString:\(urlString)")
         
        //加载的不是回调地址
-          //  if !urlString.hasPrefix(CZNetworkTools.shareInstance.redirect_uri)
-        if !urlString.hasPrefix(CZNetworkTools.shareInstance.redirect_uri)
+          //  if !urlString.hasPrefix(CZNetworkTools.sharedInstance.redirect_uri)
+        if !urlString.hasPrefix(CZNetworkTools.sharedInstance.redirect_uri)
         {   //如果点击的是确定或取消拦截不加载
      
             return true   //可以加载
@@ -86,7 +86,7 @@ extension CZOauthViewController: UIWebViewDelegate{
     - parameter code: code
     */
     func loadAccessToken(code: String){
-        CZNetworkTools.shareInstance.loadAccessToken(code){(result, error) -> () in
+        CZNetworkTools.sharedInstance.loadAccessToken(code){(result, error) -> () in
             print("--error\(error)---result\(result)")
             if error != nil || result == nil{
              //   self.

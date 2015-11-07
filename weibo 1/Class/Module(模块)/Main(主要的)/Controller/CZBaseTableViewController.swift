@@ -43,8 +43,16 @@ class CZBaseTableViewController: UITableViewController {
         else if self is CZProfileViewController{
             vistorView.setupVistorView("visitordiscover_image_profile", message: "登录后，你的微博、相册、个人资料会显示在这里，展示给别人")
        }
+ 
     }
-    //Makr: --通知方法 --
+    //移除通知
+    deinit  {
+    if self is CZHomeViewController {
+        NSNotificationCenter().removeObserver(self)
+    }
+    }
+
+        //Makr: --通知方法 --
     func didEnterBackgroung(){
         //暂停动画
         (view as! CZVistorView).pauseAnimation()

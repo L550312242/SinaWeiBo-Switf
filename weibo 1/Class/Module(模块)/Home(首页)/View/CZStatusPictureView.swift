@@ -1,6 +1,6 @@
 
 import UIKit
-
+import SDWebImage
 class CZStatusPictureView: UICollectionView {
 
    //MARK: -- 属性 --
@@ -41,9 +41,17 @@ class CZStatusPictureView: UICollectionView {
             //            layout.itemSize = CGSizeZero
             return CGSizeZero
         }
-        
+           // 在这个时候需要有图片,才能获取到图片的大小,缓存图片越早越好
         if count == 1 {
-            let size = CGSize(width: 150, height: 120)
+            //获取图片url路径
+            let urlString = status!.pictureURLs![0].absoluteString
+            // 获取缓存好的图片,缓存的图片可能没有成功
+            let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(urlString)
+            var size = CGSize(width: 150, height: 120)
+            //当有图片的时候来赋值
+            if image != nil {
+                size = image.size
+            }
             layout.itemSize = size
             return size
         }
@@ -144,5 +152,11 @@ class CZStatusPictureViewCell: UICollectionViewCell {
     
     // MARK: - 懒加载
     /// 图片
-    private lazy var iconView = UIImageView()
+    private lazy var iconView: UIImageView = {
+    let imageView = UIImageView()
+    //设置内容模式
+    imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
 }

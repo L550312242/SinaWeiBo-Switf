@@ -4,8 +4,12 @@ import UIKit
 
 class CZMainViewController: UITabBarController {
     func composeButtonClick(){
-        //_Function_ 打印方法名称
-        print(__FUNCTION__)
+//        //_Function_ 打印方法名称
+//        print(__FUNCTION__)
+        // 判断如果没有登录,就到登陆界面,否则就到发微博界面
+        let vc = CZUserAccount.userLogin() ? CZComposeViewController() : CZOauthViewController()
+        // 弹出对应的控制器
+        presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
     
     override func viewDidLoad(){
